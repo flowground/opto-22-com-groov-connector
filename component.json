@@ -1,0 +1,175 @@
+{
+    "title": "groov Public",
+    "description": "#### Revised: 2016-09-29\n\n### Overview\ngroov Public API revision 1.\n",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/opto22.com/groov/R3.3a/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "http://developer.opto22.com/api",
+                    "https://developer.opto22.com/api",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "api_key": {
+                "label": "api_key (api_key)",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "groovInfo": {
+            "main": "./lib/actions/groovInfo.js",
+            "title": "Get information about groov. No authorization required.",
+            "description": "Get information about groov. No authorization required.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/groovInfo.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listDevices": {
+            "main": "./lib/actions/listDevices.js",
+            "title": "List devices available in the data store. Authorized for admins and editors.",
+            "description": "List devices available in the data store. Authorized for admins and editors.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listDevices.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listDeviceTags": {
+            "main": "./lib/actions/listDeviceTags.js",
+            "title": "List tags of the given device. Authorized for admins and editors.",
+            "description": "List tags of the given device. Authorized for admins and editors.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listDeviceTags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "batchReadTags": {
+            "main": "./lib/actions/batchReadTags.js",
+            "title": "Read selected tags from the data store. Authorized for admins and editors.",
+            "description": "Read selected tags from the data store. Authorized for admins and editors.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/batchReadTags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "readTag": {
+            "main": "./lib/actions/readTag.js",
+            "title": "Read the current value of a single tag. Authorized for admins and editors.",
+            "description": "Read the current value of a single tag. Authorized for admins and editors.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/readTag.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listAllTags": {
+            "main": "./lib/actions/listAllTags.js",
+            "title": "List all data store tags defined in the project. Authorized for admins and editors.",
+            "description": "List all data store tags defined in the project. Authorized for admins and editors.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listAllTags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "writeTag": {
+            "main": "./lib/actions/writeTag.js",
+            "title": "Writes a new value to the given tag. Authorized for admins and editors.",
+            "description": "Writes a new value to the given tag. Authorized for admins and editors.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/writeTag.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "whoAmI": {
+            "main": "./lib/actions/whoAmI.js",
+            "title": "Get information about the user you are authenticated as. Authorized for admins, editors, operators, and kiosk.",
+            "description": "Get information about the user you are authenticated as. Authorized for admins, editors, operators, and kiosk.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/whoAmI.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

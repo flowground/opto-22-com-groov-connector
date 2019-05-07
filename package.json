@@ -1,0 +1,15 @@
+{
+    "name": "opto-22-com-groov-connector",
+    "version": "3.3.0",
+    "description": "#### Revised: 2016-09-29\n\n### Overview\ngroov Public API revision 1.\n",
+    "main": "component.json",
+    "dependencies": {
+        "elasticio-node": "0.0.9",
+        "elasticio-sailor-nodejs": "^2.2.1",
+        "swagger-client": "^3.8.22"
+    },
+    "author": {
+        "name": "Deutsche Telekom AG"
+    },
+    "license": "Apache-2.0"
+}

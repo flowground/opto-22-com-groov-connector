@@ -1,0 +1,22 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "number",
+            "format": "int64"
+        },
+        "index": {
+            "required": false,
+            "type": "number",
+            "format": "int32",
+            "default": 0
+        },
+        "count": {
+            "required": false,
+            "type": "number",
+            "format": "int32",
+            "default": 1
+        }
+    }
+}
